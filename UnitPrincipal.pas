@@ -12,6 +12,7 @@ type
     Edit1: TEdit;
     Button1: TButton;
     procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     function GetNrDoc: String;
     procedure SetNrDoc(const Value: String);
@@ -23,6 +24,8 @@ var
   FormPrincipal: TFormPrincipal;
 
 implementation
+
+uses UnitDocCpf;
 
 {$R *.dfm}
 
@@ -41,6 +44,20 @@ end;
 procedure TFormPrincipal.SetNrDoc(const Value: String);
 begin
   Edit1.Text := Value;
+end;
+
+procedure TFormPrincipal.Button1Click(Sender: TObject);
+var
+  Obj: TDocumentoCpf;
+begin
+  Obj := TDocumentoCpf.Create;
+  Obj.SetNumero(GetNrDoc);
+  Obj.CalcularDigitoVerificador;
+
+  if Obj.DigitoVerificadorEhValido then
+    ShowMessage('CPF ok')
+  else
+    ShowMessage('CPF Inválido');
 end;
 
 end.

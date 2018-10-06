@@ -1,6 +1,6 @@
 object FormPrincipal: TFormPrincipal
-  Left = 224
-  Top = 113
+  Left = 889
+  Top = 221
   Width = 399
   Height = 188
   Caption = 'Validador de N'#250'mero de Documentos'
@@ -43,5 +43,6 @@ object FormPrincipal: TFormPrincipal
     Height = 25
     Caption = 'Validar Documento'
     TabOrder = 1
+    OnClick = Button1Click
   end
 end
