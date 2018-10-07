@@ -90,7 +90,10 @@ end;
 
 function TDocumentoAbstrato.GetDigitoVerificadorEhValido: Boolean;
 begin
-  Result := (FDV = FDV_Calc);
+  if PodeCalcularDigitoVerificador then
+    Result := (FDV = FDV_Calc)
+  else
+    Result := False;
 end;
 
 function TDocumentoAbstrato.GetNumero: String;

@@ -4,7 +4,8 @@ uses
   Forms,
   UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal},
   UnitDocAbstrato in 'UnitDocAbstrato.pas',
-  UnitDocCpf in 'UnitDocCpf.pas';
+  UnitDocCpf in 'UnitDocCpf.pas',
+  UnitDocCnpj in 'UnitDocCnpj.pas';
 
 {$R *.res}
 
